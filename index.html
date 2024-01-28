@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <title>CRUD SYSTEM</title>
+</head>
+
+<body class="bg-dark">
+
+  <div class="container bg-dark p-3">
+    <h1 class="text-center  fw-bolder my-3 text-white">Product Management System</h1>
+
+    <div>
+      <label class="text-white h5" for="productNameInput">Product Name:</label>
+      <input type="text" id="productNameInput" class="form-control mb-1" placeholder="Enter the name of the product">
+    </div>
+    <div>
+      <label class="text-white h5" for="productPriceInput">Product Price:</label>
+      <input type="number" id="productPriceInput" class="form-control mb-1"
+        placeholder="Enter the price of the product">
+    </div>
+    <div>
+      <label class="text-white h5" for="productCategoryInput">Product Gatagory:</label>
+      <input type="text" id="productCategoryInput" class="form-control mb-1" placeholder="Enter product category">
+    </div>
+    <div>
+      <label class="text-white h5" for="productDescriptionInput">Product Description:</label>
+      <textarea id="productDescriptionInput" class="form-control mb-1" placeholder="Write the description"></textarea>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button onclick="addProduct()" class="btn btn-primary my-1 w-100" id="addProductBtn">Add Product</button>
+      <button onclick='updateProduct()'  class="btn btn-primary my-1 d-none w-100" id="updateProductBtn">Update Product</button>
+    </div>
+
+    <div>
+      <label class="text-white h5" for="productSearch">Search:</label>
+      <input oninput="searchByName(this.value)" type="search" id="productSearch"
+        class="form-control mb-3 bg-body-tertiary" placeholder="Search By Name...">
+    </div>
+
+    <table class="table text-center">
+      <thead>
+        <tr class="mb-1">
+          <th class="bg-dark text-white">#</th>
+          <th class="bg-success-subtle">Name</th>
+          <th class="bg-secondary text-white">price</th>
+          <th class="bg-primary-subtle">Gategory</th>
+          <th class="bg-success-subtle">Description</th>
+          <th class="bg-warning" >Action</th>
+        </tr>
+      </thead>
+      <tbody id="tableData">
+
+      </tbody>
+    </table>
+
+  </div>
+
+
+  <script src="JS/bootstrap.bundle.min.js"></script>
+  <script src="JS/main.js"></script>
+</body>
+
+</html>
